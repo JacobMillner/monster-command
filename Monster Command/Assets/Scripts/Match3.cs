@@ -66,7 +66,7 @@ public class Match3 : MonoBehaviour
                  } else {
                      newPiece = fillPiece();
                  }
-                 board[x, y] = new Node(-1, new Point(x,y));
+                 board[x, y] = new Node(newPiece, new Point(x,y));
              }
          }
     }
