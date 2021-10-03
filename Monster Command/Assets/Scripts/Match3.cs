@@ -39,13 +39,12 @@ public class Match3 : MonoBehaviour
             for (int y = 0; y < height; y++)
             {
                 int val = board[x,y].value;
-                Debug.Log("Board val: " + val);
                 if (val <= 0) continue;
-
-                Debug.Log("here we go!");
                 GameObject p = Instantiate(nodePiece, gameBoard);
+                NodePiece node = p.GetComponent<NodePiece>();
                 RectTransform rect = p.GetComponent<RectTransform>();
                 rect.anchoredPosition = new Vector2(32 + (64 * x), -32 - (64 * y));
+                node.Initialize(val, new Point(x, y), pieces[val - 1]);
             }
         }
     }
